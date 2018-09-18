@@ -12,10 +12,14 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
 
   namespace :admin do
+    resources :genres, only: :create
+  end
+
+  namespace :admin do
     resources :categories, only: :index
   end
 
-  resources :genres, only: [:index, :create, :show]
+  resources :genres, only: [:index, :show]
 
   resources :carts, only: [:create]
 

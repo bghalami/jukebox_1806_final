@@ -2,7 +2,7 @@
 <% if @user %>
   <% if @user.role == "admin" %>
   <h2>Create New Genre</h2>
-  <%= form_for @genre do |f| %>
+  <%= form_for [@admin, @genre], :url => admin_genres_path do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.submit %>
